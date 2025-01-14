@@ -1,0 +1,20 @@
+{
+  "name": "koa2-ai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.15.3",
+    "openai": "^4.78.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
