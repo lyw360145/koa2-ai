@@ -43,14 +43,16 @@ wss.on('connection', (ws) => {
 
 
   ws.on('message', async (message) => {
-   
+    console.log(message.toString(),'xxx')
+    if(message.toString() === 'ping'){
+        return;
+    }
     ws.send('ai生成中...');
     try {
       const completion = await openai.chat.completions.create({
         messages: [{ role: "system", content: `"${message}",找出这段话关键词,并且以数组形式输出,只输出关键词` }],
         model: "deepseek-chat",
       });
-
       const regex = /\[(.*?)\]/;
       const match = completion.choices[0].message.content.match(regex);
 
