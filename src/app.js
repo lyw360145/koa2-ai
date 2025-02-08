@@ -3,11 +3,11 @@ const OpenAI = require('openai');
 const http = require('http');
 const aiRouters = require('./routes/aiRoutes');
 const createWebSocketServer = require('./websocket');
-
+const loggerMiddleware = require('./middlewares/loggerMiddleware');
 
 const app = new Koa();
 
-
+app.use(loggerMiddleware);
 // Koa 中间件
 app.use(aiRouters.routes());
 
